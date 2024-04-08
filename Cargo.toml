@@ -6,5 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+arduino_nano33iot = "0.7.1"
+atsamd-hal = { version = "0.16.0", default-features = false, features = ["samd21g"] }
+cortex-m-rt = "0.7.3"
 defmt-rtt = "0.4.0"
 panic-probe = "0.3.1"
+
+[package.metadata]
+chip = "ATSAMD21G18A"
