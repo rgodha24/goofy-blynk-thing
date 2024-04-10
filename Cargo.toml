@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 arduino_nano33iot = "0.7.1"
 atsamd-hal = { version = "0.16.0", default-features = false, features = ["samd21g"] }
+blynk_io = "0.3.0"
 cortex-m-rt = "0.7.3"
 defmt-rtt = "0.4.0"
 panic-probe = "0.3.1"

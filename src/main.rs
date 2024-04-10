@@ -27,6 +27,8 @@ fn main() -> ! {
     let mut led: bsp::Led = pins.led_sck.into();
     let mut delay = Delay::new(core.SYST, &mut clocks);
 
+    let mut blynk = blynk_io::Blynk::new("i4yPswMJdpwrkQvdCO3brClifCeNa0kn");
+
     loop {
         delay.delay_ms(255u8);
         delay.delay_ms(255u8);
