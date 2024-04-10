@@ -12,6 +12,7 @@ use hal::clock::GenericClockController;
 use hal::delay::Delay;
 use hal::pac::{CorePeripherals, Peripherals};
 use hal::prelude::*;
+use hal::time::MegaHertz;
 
 #[entry]
 fn main() -> ! {
@@ -27,15 +28,15 @@ fn main() -> ! {
     let mut led: bsp::Led = pins.led_sck.into();
     let mut delay = Delay::new(core.SYST, &mut clocks);
 
-    let mut blynk = blynk_io::Blynk::new("i4yPswMJdpwrkQvdCO3brClifCeNa0kn");
+    // let mut blynk = blynk_io::Blynk::new("i4yPswMJdpwrkQvdCO3brClifCeNa0kn");
+
 
     loop {
         delay.delay_ms(255u8);
-        delay.delay_ms(255u8);
         led.set_high().unwrap();
         delay.delay_ms(255u8);
-        delay.delay_ms(255u8);
         led.set_low().unwrap();
-    }
 
+        serial.write(b'h').unwrap();
+    }
 }
