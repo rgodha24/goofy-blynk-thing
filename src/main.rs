@@ -1,6 +1,8 @@
 #![no_std]
 #![no_main]
 
+mod rolling_average;
+
 use arduino_nano33iot as bsp;
 use bsp::hal;
 use bsp::hal::prelude::*;
